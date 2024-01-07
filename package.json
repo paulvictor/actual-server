@@ -10,7 +10,6 @@
     "build": "tsc",
     "test": "NODE_ENV=test NODE_OPTIONS='--experimental-vm-modules --trace-warnings' jest  --coverage",
     "types": "tsc --noEmit --incremental",
-    "verify": "yarn -s lint && yarn types",
     "reset-password": "node src/scripts/reset-password.js",
     "health-check": "node src/scripts/health-check.js"
   },
@@ -30,6 +29,7 @@
     "jws": "^4.0.0",
     "migrate": "^2.0.1",
     "nordigen-node": "^1.2.6",
+    "@types/node": "^20.10.6",
     "uuid": "^9.0.0"
   },
   "devDependencies": {
@@ -40,7 +40,7 @@
     "@types/express": "^4.17.17",
     "@types/express-actuator": "^1.8.0",
     "@types/jest": "^29.2.3",
-    "@types/node": "^17.0.45",
+    "@types/node": "^20.10.6",
     "@types/supertest": "^2.0.12",
     "@types/uuid": "^9.0.0",
     "@typescript-eslint/eslint-plugin": "^5.51.0",
@@ -54,6 +54,5 @@
   },
   "engines": {
     "node": ">=18.0.0"
-  },
-  "packageManager": "yarn@4.0.1"
+  }
 }

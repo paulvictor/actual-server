@@ -31,3 +31,4 @@ dist
 .idea
 /coverage
 /coverage-e2e
+/result
