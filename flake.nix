@@ -16,7 +16,7 @@
         };
         better-sqlite3-hashes = {
           "linux-x64" = "0p8iyj5xiqnxzj2n700hkfcghk7z9kk0pknpyvrnif58gs3y8zk3";
-          "linux-arm64" = "0s2d2lx2nhdkglszijq15q00l84zlx0z8v7c2pph046afw3igsb2";
+          "linux-arm64" = "sha256-0Ubo+EqpHxn0u1/hL8LXFaqhwuegIgEsK9iz+ceHTKM=";
         };
         system-to-node-system =
           if system == "x86_64-linux"
@@ -54,7 +54,6 @@
           '';
         };
 
-
         actual = pkgs.stdenv.mkDerivation {
           name = "actual";
           src = ./.;
@@ -76,6 +75,8 @@
           packages = {
             inherit node-modules;
             default = actual;
+            runner = pkgs.writeShellScriptBin "actual-server"
+              "${pkgs.nodejs}/bin/node ${actual}/build/app.js";
           };
         }
     );
