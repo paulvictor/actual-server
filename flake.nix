@@ -65,6 +65,7 @@
           installPhase =  ''
             mkdir -pv $out
             cp -R build $out/
+            cp -R $src/src/sql $out/build/src/sql
             ln -s ${node-modules}/libexec/actual-sync/node_modules $out/build/node_modules
             cp package.json $out/build/
           '';
