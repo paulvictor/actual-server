@@ -25,6 +25,7 @@ app.use(
     max: 500,
     legacyHeaders: false,
     standardHeaders: true,
+    validate: false
   }),
 );
 app.use(bodyParser.json({ limit: `${config.upload.fileSizeLimitMB}mb` }));
